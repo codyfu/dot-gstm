@@ -1,0 +1,223 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:DotGstm.Desktop.Views"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="450"
+        x:Class="DotGstm.Desktop.Views.MainWindow"
+        Title="Gnome SSH Tunnel Manager"
+        Width="550" Height="450"
+        MinWidth="500" MinHeight="400"
+        Icon="/Assets/Images/gSTM.png">
+
+  <Window.Styles>
+    <Style Selector="Button.vertical-btn">
+      <Setter Property="Margin" Value="0" />
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="Padding" Value="8,4" />
+    </Style>
+    <Style Selector="Image.status-icon">
+      <Setter Property="Width" Value="16" />
+      <Setter Property="Height" Value="16" />
+      <Setter Property="Margin" Value="5,0" />
+    </Style>
+    <!-- 移除 DataGrid Cell 焦點黑框 -->
+    <Style Selector="DataGridCell:focus /template/ Grid#FocusVisual">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+  </Window.Styles>
+
+  <DockPanel>
+
+    <!-- SSH 命令顯示區域 (最底部，全寬，可選取文字，動態高度 1-3 行) -->
+    <Border DockPanel.Dock="Bottom"
+            BorderBrush="LightGray"
+            BorderThickness="0,1,0,0"
+            Padding="0"
+            Background="White"
+            MinHeight="35"
+            MaxHeight="85">
+      <TextBox x:Name="CommandTextBox"
+               IsReadOnly="True"
+               AcceptsReturn="True"
+               TextWrapping="Wrap"
+               BorderThickness="0"
+               Background="Transparent"
+               FontSize="11"
+               VerticalAlignment="Top"
+               Padding="5"
+               Focusable="False"
+               Text="Ready for action." />
+    </Border>
+
+    <!-- Banner Logo (頂部) - 可點擊開啟 About 對話框 -->
+    <Border DockPanel.Dock="Top"
+            Background="White"
+            Margin="0,0,0,5">
+      <Image x:Name="BannerImage"
+             Source="/Assets/Images/STMbanner.png"
+             Stretch="Uniform"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             Cursor="Hand"
+             PointerPressed="BannerImage_PointerPressed" />
+    </Border>
+
+    <!-- 上方區域：左側隧道列表 + 右側按鈕列 -->
+    <DockPanel>
+      <!-- 右側按鈕列 (固定寬度) -->
+      <Border DockPanel.Dock="Right"
+              Width="120"
+              Background="#F0F0F0"
+              BorderBrush="LightGray"
+              BorderThickness="1,0,0,0"
+              Padding="0,0">
+      <StackPanel Spacing="0">
+
+        <Button Classes="vertical-btn" x:Name="BtnStart" HotKey="Alt+S">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M8,5 L8,19 L19,12 Z"
+                  Fill="Green"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="啟動(S)" />
+          </StackPanel>
+        </Button>
+
+        <Button Classes="vertical-btn" x:Name="BtnStop" HotKey="Alt+T">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M6,6 L18,6 L18,18 L6,18 Z"
+                  Fill="Red"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="停止(T)" />
+          </StackPanel>
+        </Button>
+
+        <Separator Margin="0,5" />
+
+        <Button Classes="vertical-btn" x:Name="BtnAdd" HotKey="Alt+A">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M12,6 L12,18 M6,12 L18,12"
+                  Stroke="Blue"
+                  StrokeThickness="2"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="加入(A)" />
+          </StackPanel>
+        </Button>
+
+        <Button Classes="vertical-btn" x:Name="BtnDelete" HotKey="Alt+D">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M6,6 L18,18 M6,18 L18,6"
+                  Stroke="Red"
+                  StrokeThickness="2"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="刪除(D)" />
+          </StackPanel>
+        </Button>
+
+        <Button Classes="vertical-btn" x:Name="BtnProperties" HotKey="Alt+P">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M12,2 L15,8 L22,9 L17,14 L18,21 L12,17 L6,21 L7,14 L2,9 L9,8 Z"
+                  Fill="Gray"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="屬性(P)" />
+          </StackPanel>
+        </Button>
+
+        <Button Classes="vertical-btn" x:Name="BtnCopy" HotKey="Alt+C">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M6,2 L16,2 L16,6 L20,6 L20,20 L10,20 L10,16 L6,16 Z M10,6 L10,16 L16,16 L16,6 Z"
+                  Fill="Gray"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="複製(C)" />
+          </StackPanel>
+        </Button>
+
+        <Separator Margin="0,5" />
+
+        <!-- 語言選擇 ComboBox -->
+        <ComboBox x:Name="LanguageComboBox"
+                  HorizontalAlignment="Stretch"
+                  Margin="0,5"
+                  SelectedIndex="0">
+          <ComboBoxItem Content="繁體中文 (Traditional Chinese)" Tag="zh-TW" />
+          <ComboBoxItem Content="简体中文 (Simplified Chinese)" Tag="zh-CN" />
+          <ComboBoxItem Content="English" Tag="en-US" />
+          <ComboBoxItem Content="日本語 (Japanese)" Tag="ja-JP" />
+          <ComboBoxItem Content="한국어 (Korean)" Tag="ko-KR" />
+        </ComboBox>
+
+        <Separator Margin="0,5" />
+
+        <Button Classes="vertical-btn" x:Name="BtnClose" HotKey="Alt+Q">
+          <StackPanel Orientation="Horizontal">
+            <Path Data="M2,12 L8,12 L8,2 L16,2 L16,12 L22,12 L12,22 Z"
+                  Fill="DarkRed"
+                  Width="12" Height="12"
+                  Stretch="Uniform"
+                  Margin="0,0,3,0" />
+            <TextBlock Text="退出(Q)" />
+          </StackPanel>
+        </Button>
+
+      </StackPanel>
+    </Border>
+
+      <!-- 左側隧道清單區域 (填滿剩餘空間) -->
+      <Border BorderBrush="LightGray"
+              BorderThickness="1"
+              Background="White"
+              Margin="5,0,0,0">
+        <DataGrid x:Name="TunnelList"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  GridLinesVisibility="None"
+                  HeadersVisibility="None"
+                  SelectionMode="Single"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  HorizontalScrollBarVisibility="Disabled"
+                  VerticalScrollBarVisibility="Auto">
+
+          <DataGrid.Columns>
+            <!-- 狀態圖示欄 -->
+            <DataGridTemplateColumn Width="40" Header="狀態">
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Image Source="{Binding Active, Converter={x:Static local:StatusImageConverter.Instance}}"
+                         Width="16"
+                         Height="16"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center" />
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+
+            <!-- 隧道名稱欄 -->
+            <DataGridTextColumn Header="Tunnel"
+                                Binding="{Binding Name}"
+                                Width="*"
+                                IsReadOnly="True" />
+          </DataGrid.Columns>
+
+        </DataGrid>
+      </Border>
+
+    </DockPanel><!-- 結束內部 DockPanel (上方左右分割) -->
+
+  </DockPanel><!-- 結束外部 DockPanel (整體上下分割) -->
+
+</Window>

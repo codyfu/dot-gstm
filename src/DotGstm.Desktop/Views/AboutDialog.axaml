@@ -1,0 +1,151 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DotGstm.Desktop.Views.AboutDialog"
+        Title="About"
+        Width="432" Height="485"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        Icon="/Assets/Images/gSTM.png">
+
+  <Border Padding="20">
+    <Grid RowDefinitions="Auto,*,Auto">
+
+      <!-- Logo 和標題 (固定顯示) -->
+      <StackPanel Grid.Row="0" Spacing="10" HorizontalAlignment="Center">
+        <Image Source="/Assets/Images/gSTM.png"
+               Width="100"
+               Height="100"
+               Stretch="Uniform" />
+        <TextBlock Text="gSTM"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center" />
+      </StackPanel>
+
+      <!-- 內容區域 (滑出效果) -->
+      <Border Grid.Row="1" Margin="0,20,0,0" ClipToBounds="True">
+        <Grid>
+          <!-- 主頁面 (固定顯示) -->
+          <StackPanel x:Name="MainPage" Spacing="10">
+            <TextBlock Text="v1.4.0"
+                       FontSize="14"
+                       HorizontalAlignment="Center"
+                       Foreground="#666" />
+
+            <TextBlock x:Name="TxtDescription"
+                       Text="Gnome SSH Tunnel Manager - a front-end to ssh tunneling."
+                       FontSize="12"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="0,10,0,0" />
+
+            <TextBlock x:Name="TxtWebsite"
+                       Text="網站"
+                       FontSize="12"
+                       HorizontalAlignment="Center"
+                       Foreground="#0066CC"
+                       Cursor="Hand"
+                       Margin="0,10,0,0"
+                       PointerPressed="TxtWebsite_PointerPressed" />
+
+            <Separator Margin="0,5,0,10" />
+
+            <StackPanel Spacing="3">
+              <TextBlock Text="copyright (c) Mark Smulders 2005-2020"
+                         FontSize="11"
+                         HorizontalAlignment="Center" />
+              <TextBlock Text="copyright (c) John Spray 2006-2020"
+                         FontSize="11"
+                         HorizontalAlignment="Center" />
+              <TextBlock Text="copyright (c) Dallen Wilson 2019-2020"
+                         FontSize="11"
+                         HorizontalAlignment="Center" />
+              <TextBlock Text="copyright (c) Jarek Polok 2020"
+                         FontSize="11"
+                         HorizontalAlignment="Center" />
+              <TextBlock Text="copyright (c) Alex Guzman 2020"
+                         FontSize="11"
+                         HorizontalAlignment="Center" />
+              <TextBlock Text="copyright (c) Cody &amp; Claude-Code 2026"
+                         FontSize="11"
+                         HorizontalAlignment="Center" />
+            </StackPanel>
+
+            <TextBlock x:Name="TxtLicense"
+                       Text="這個程式式沒有任何保證任何責任。&#x0a;需要更多標準，請參閱 GNU 通用公眾授權 2 或稍後更新版本。"
+                       FontSize="11"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="0,15,0,0" />
+          </StackPanel>
+
+          <!-- Credits 頁面 (從下方滑出) -->
+          <Border x:Name="CreditsPanel"
+                  Background="White"
+                  VerticalAlignment="Stretch"
+                  IsVisible="False">
+            <Border.Transitions>
+              <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.3">
+                  <TransformOperationsTransition.Easing>
+                    <CubicEaseOut />
+                  </TransformOperationsTransition.Easing>
+                </TransformOperationsTransition>
+              </Transitions>
+            </Border.Transitions>
+
+            <ScrollViewer>
+              <StackPanel Spacing="5" Margin="10">
+                <TextBlock x:Name="TxtDotNetPort"
+                           Text="dot-gSTM (.NET port)"
+                           FontSize="14"
+                           FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock x:Name="RunPrefix"
+                             Text="Refactored from "
+                             FontSize="11"
+                             Foreground="#666" />
+                  <TextBlock x:Name="RunGstmLink"
+                             Text="gSTM Gtk3 Edition"
+                             FontSize="11"
+                             Foreground="#0066CC"
+                             Cursor="Hand"
+                             PointerPressed="RunGstmLink_PointerPressed" />
+                  <TextBlock x:Name="RunSuffix"
+                             Text=" (.NET 10 + AvaloniaUI)"
+                             FontSize="11"
+                             Foreground="#666" />
+                </StackPanel>
+                <TextBlock x:Name="TxtDotNetAuthor"
+                           Text="Author: Cody &amp; Claude-Code"
+                           FontSize="11"
+                           Foreground="#666"
+                           Margin="0,5,0,0" />
+              </StackPanel>
+            </ScrollViewer>
+          </Border>
+        </Grid>
+      </Border>
+
+      <!-- 按鈕區域 (左右分布) -->
+      <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto" Margin="0,20,0,0">
+        <ToggleButton x:Name="BtnCredits"
+                      Grid.Column="0"
+                      Content="銘謝(R)"
+                      Width="100"
+                      HorizontalContentAlignment="Center"
+                      HotKey="Alt+R"
+                      Click="BtnCredits_Click" />
+        <Button x:Name="BtnClose"
+                Grid.Column="2"
+                Content="關閉(C)"
+                Width="100"
+                HorizontalContentAlignment="Center"
+                HotKey="Alt+C"
+                Click="BtnClose_Click" />
+      </Grid>
+
+    </Grid>
+  </Border>
+
+</Window>

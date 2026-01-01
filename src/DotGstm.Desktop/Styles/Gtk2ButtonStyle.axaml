@@ -1,0 +1,360 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- ========================================
+       GTK2 Classic Button Style
+       Inspired by GTK2 Clearlooks/Raleigh themes
+       ======================================== -->
+
+  <!-- Button 樣式 -->
+  <Style Selector="Button">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#ededed" Offset="0"/>
+        <GradientStop Color="#d6d6d6" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="BorderBrush" Value="#a0a0a0"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="3"/>
+    <Setter Property="Padding" Value="12,6"/>
+    <Setter Property="Foreground" Value="#000000"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="MinHeight" Value="32"/>
+    <Setter Property="Cursor" Value="Hand"/>
+
+    <!-- 外層陰影效果（模擬 GTK2 的 3D 邊框） -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <!-- 外層 Border: 3D 效果 (上/左淺色高光，下/右深色陰影) -->
+        <Border BorderThickness="1"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Background="Transparent">
+          <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+              <GradientStop Color="#ffffff" Offset="0"/>
+              <GradientStop Color="#5f5f5f" Offset="1"/>
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+
+          <!-- 內層 Border: 主要按鈕 -->
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Padding="{TemplateBinding Padding}">
+            <ContentPresenter Content="{TemplateBinding Content}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <!-- Hover 狀態 -->
+  <Style Selector="Button:pointerover">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#f5f5f5" Offset="0"/>
+        <GradientStop Color="#e0e0e0" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+  </Style>
+
+  <!-- Pressed 狀態 (反轉邊框，背景變暗) -->
+  <Style Selector="Button:pressed">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#c8c8c8" Offset="0"/>
+        <GradientStop Color="#d6d6d6" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <!-- Pressed: 邊框反轉 (上/左深色，下/右淺色) -->
+        <Border BorderThickness="1"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Background="Transparent">
+          <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+              <GradientStop Color="#5f5f5f" Offset="0"/>
+              <GradientStop Color="#ffffff" Offset="1"/>
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Padding="{TemplateBinding Padding}">
+            <ContentPresenter Content="{TemplateBinding Content}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <!-- Disabled 狀態 -->
+  <Style Selector="Button:disabled">
+    <Setter Property="Opacity" Value="0.5"/>
+  </Style>
+
+  <!-- ========================================
+       ToggleButton GTK2 Style
+       ======================================== -->
+
+  <Style Selector="ToggleButton">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#ededed" Offset="0"/>
+        <GradientStop Color="#d6d6d6" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="BorderBrush" Value="#a0a0a0"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="3"/>
+    <Setter Property="Padding" Value="12,6"/>
+    <Setter Property="Foreground" Value="#000000"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="MinHeight" Value="32"/>
+    <Setter Property="Cursor" Value="Hand"/>
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border BorderThickness="1"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Background="Transparent">
+          <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+              <GradientStop Color="#ffffff" Offset="0"/>
+              <GradientStop Color="#5f5f5f" Offset="1"/>
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Padding="{TemplateBinding Padding}">
+            <ContentPresenter Content="{TemplateBinding Content}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <!-- ToggleButton Hover -->
+  <Style Selector="ToggleButton:pointerover">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#f5f5f5" Offset="0"/>
+        <GradientStop Color="#e0e0e0" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+  </Style>
+
+  <!-- ToggleButton Checked (按下狀態，不要變藍色!) -->
+  <Style Selector="ToggleButton:checked">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#c8c8c8" Offset="0"/>
+        <GradientStop Color="#d6d6d6" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <!-- Checked: 邊框反轉，看起來「壓下去」 -->
+        <Border BorderThickness="1"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Background="Transparent">
+          <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+              <GradientStop Color="#5f5f5f" Offset="0"/>
+              <GradientStop Color="#ffffff" Offset="1"/>
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Padding="{TemplateBinding Padding}">
+            <ContentPresenter Content="{TemplateBinding Content}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <!-- ToggleButton Disabled -->
+  <Style Selector="ToggleButton:disabled">
+    <Setter Property="Opacity" Value="0.5"/>
+  </Style>
+
+  <!-- ========================================
+       DataGrid GTK2 Style
+       ======================================== -->
+
+  <!-- DataGrid Column Header (GTK2 style) -->
+  <Style Selector="DataGridColumnHeader">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#f5f5f5" Offset="0"/>
+        <GradientStop Color="#e0e0e0" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="Foreground" Value="#000000"/>
+    <Setter Property="BorderBrush" Value="#a0a0a0"/>
+    <Setter Property="BorderThickness" Value="0,0,1,1"/>
+    <Setter Property="Padding" Value="6,4"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="FontWeight" Value="Normal"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <!-- 外層 Border: 3D 效果 -->
+        <Border BorderThickness="1"
+                Background="Transparent">
+          <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+              <GradientStop Color="#ffffff" Offset="0"/>
+              <GradientStop Color="#888888" Offset="1"/>
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+
+          <!-- 內層 Border: 主要背景 -->
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  Padding="{TemplateBinding Padding}">
+            <ContentPresenter Content="{TemplateBinding Content}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <!-- DataGrid Row 選取狀態 (GTK2 藍色漸層) -->
+  <Style Selector="DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
+    <Setter Property="Fill">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#5d95d6" Offset="0"/>
+        <GradientStop Color="#4a7ab8" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+  </Style>
+
+  <!-- DataGrid Cell 選取狀態文字保持黑色 -->
+  <Style Selector="DataGridCell:selected">
+    <Setter Property="Foreground" Value="Black"/>
+  </Style>
+
+  <!-- ========================================
+       ComboBox GTK2 Style
+       ======================================== -->
+
+  <!-- ComboBox 樣式 -->
+  <Style Selector="ComboBox">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#ffffff" Offset="0"/>
+        <GradientStop Color="#f0f0f0" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="BorderBrush" Value="#a0a0a0"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="3"/>
+    <Setter Property="Padding" Value="8,4"/>
+    <Setter Property="Foreground" Value="#000000"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="MinHeight" Value="28"/>
+  </Style>
+
+  <!-- ComboBox Hover 狀態 -->
+  <Style Selector="ComboBox:pointerover">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#ffffff" Offset="0"/>
+        <GradientStop Color="#f8f8f8" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+  </Style>
+
+  <!-- ComboBox Pressed 狀態 -->
+  <Style Selector="ComboBox:pressed">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#e8e8e8" Offset="0"/>
+        <GradientStop Color="#f0f0f0" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+  </Style>
+
+  <!-- ComboBox Disabled 狀態 -->
+  <Style Selector="ComboBox:disabled">
+    <Setter Property="Opacity" Value="0.5"/>
+  </Style>
+
+  <!-- ComboBoxItem 樣式 -->
+  <Style Selector="ComboBoxItem">
+    <Setter Property="Padding" Value="8,4"/>
+    <Setter Property="Background" Value="White"/>
+    <Setter Property="Foreground" Value="Black"/>
+  </Style>
+
+  <!-- ComboBoxItem Hover 狀態 -->
+  <Style Selector="ComboBoxItem:pointerover">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#5d95d6" Offset="0"/>
+        <GradientStop Color="#4a7ab8" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="Foreground" Value="Black"/>
+  </Style>
+
+  <!-- ComboBoxItem Selected 狀態 -->
+  <Style Selector="ComboBoxItem:selected">
+    <Setter Property="Background">
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Color="#5d95d6" Offset="0"/>
+        <GradientStop Color="#4a7ab8" Offset="1"/>
+      </LinearGradientBrush>
+    </Setter>
+    <Setter Property="Foreground" Value="Black"/>
+  </Style>
+
+  <!-- ========================================
+       Separator GTK2 Style (3D 刻痕效果)
+       ======================================== -->
+
+  <!-- Separator 樣式 -->
+  <Style Selector="Separator">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Height" Value="2"/>
+    <Setter Property="Margin" Value="0,3"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <!-- 深色陰影線 -->
+          <Border Height="1"
+                  VerticalAlignment="Top"
+                  Background="#a0a0a0"/>
+          <!-- 淺色高光線 -->
+          <Border Height="1"
+                  VerticalAlignment="Bottom"
+                  Background="#ffffff"/>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+</Styles>

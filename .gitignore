@@ -1,0 +1,43 @@
+# .NET build outputs
+src/DotGstm.Desktop/bin/
+src/DotGstm.Desktop/obj/
+src/DotGstm.Askpass/bin/
+src/DotGstm.Askpass/obj/
+
+# CLAUDE
+.claude/
+CLAUDE.md
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosslcache
+*.sln.docstates
+
+# Visual Studio cache/options directory
+.vs/
+
+# Rider
+.idea/
+
+# Mac
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp

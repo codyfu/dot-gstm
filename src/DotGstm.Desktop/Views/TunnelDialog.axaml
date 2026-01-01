@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DotGstm.Desktop.ViewModels"
+        x:Class="DotGstm.Desktop.Views.TunnelDialog"
+        x:DataType="vm:TunnelDialogViewModel"
+        Title="Edit redirection (以超級使用者)"
+        Width="621" Height="145"
+        MinWidth="621" MinHeight="145"
+        MaxWidth="621" MaxHeight="145"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        Background="#EDEDED"
+        Icon="/Assets/Images/gSTM.png">
+
+  <DockPanel Margin="10">
+
+    <!-- 底部按鈕 -->
+    <StackPanel DockPanel.Dock="Bottom"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Margin="0,8,0,0"
+                Spacing="8">
+      <Button x:Name="BtnCancel" Width="100" Height="32" HotKey="Alt+C" Click="BtnCancel_Click">
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBlock Text="●" Foreground="Red" FontSize="14" VerticalAlignment="Center" />
+          <TextBlock x:Name="TxtCancelLabel" Text="取消(C)" VerticalAlignment="Center" />
+        </StackPanel>
+      </Button>
+      <Button x:Name="BtnOk" Width="100" Height="32" IsDefault="True" HotKey="Alt+O" Click="BtnOk_Click">
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBlock Text="✓" Foreground="Blue" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
+          <TextBlock x:Name="TxtOkLabel" Text="確定(O)" VerticalAlignment="Center" />
+        </StackPanel>
+      </Button>
+    </StackPanel>
+
+    <!-- 主要內容：左右4分割 -->
+    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10">
+
+      <!-- 第一欄：Type -->
+      <StackPanel Grid.Column="0" Spacing="2">
+        <TextBlock x:Name="TxtTypeLabel" Text="Type:" />
+        <ComboBox x:Name="CmbType" SelectedItem="{Binding SelectedType}" Width="120">
+          <ComboBox.Items>
+            <x:String>local</x:String>
+            <x:String>remote</x:String>
+            <x:String>dynamic</x:String>
+          </ComboBox.Items>
+        </ComboBox>
+      </StackPanel>
+
+      <!-- 第二欄：[bind_address]:Port -->
+      <StackPanel Grid.Column="1" Spacing="2">
+        <TextBlock x:Name="TxtBindPortLabel" Text="[bind_address]:Port:" />
+        <TextBox x:Name="TxtBindPort" Text="{Binding BindPort}" Width="220" />
+      </StackPanel>
+
+      <!-- 第三欄：To Host -->
+      <StackPanel Grid.Column="2" Spacing="2">
+        <TextBlock x:Name="TxtToHostLabel" Text="To Host:" />
+        <TextBox x:Name="TxtToHost" Text="{Binding ToHost}" IsEnabled="{Binding IsToHostEnabled}" Width="165" />
+      </StackPanel>
+
+      <!-- 第四欄：To Port -->
+      <StackPanel Grid.Column="3" Spacing="2">
+        <TextBlock x:Name="TxtToPortLabel" Text="To Port:" />
+        <TextBox x:Name="TxtToPort" Text="{Binding ToPort}" IsEnabled="{Binding IsToPortEnabled}" Width="70" />
+      </StackPanel>
+
+    </Grid>
+
+  </DockPanel>
+
+</Window>

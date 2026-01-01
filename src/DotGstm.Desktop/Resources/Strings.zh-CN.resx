@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- MainWindow 按钮 -->
+  <data name="BtnStart" xml:space="preserve">
+    <value>启动(S)</value>
+  </data>
+  <data name="BtnStop" xml:space="preserve">
+    <value>停止(T)</value>
+  </data>
+  <data name="BtnRestart" xml:space="preserve">
+    <value>重启(R)</value>
+  </data>
+  <data name="BtnAdd" xml:space="preserve">
+    <value>添加(A)</value>
+  </data>
+  <data name="BtnDelete" xml:space="preserve">
+    <value>删除(D)</value>
+  </data>
+  <data name="BtnProperties" xml:space="preserve">
+    <value>属性(P)</value>
+  </data>
+  <data name="BtnCopy" xml:space="preserve">
+    <value>复制(C)</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>退出(Q)</value>
+  </data>
+
+  <!-- MainWindow 列标题 -->
+  <data name="ColumnName" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="ColumnActive" xml:space="preserve">
+    <value>状态</value>
+  </data>
+
+  <!-- 状态文字 -->
+  <data name="StatusActive" xml:space="preserve">
+    <value>运行中</value>
+  </data>
+  <data name="StatusInactive" xml:space="preserve">
+    <value>已停止</value>
+  </data>
+
+  <!-- 对话框 -->
+  <data name="DialogDeleteTitle" xml:space="preserve">
+    <value>删除隧道？</value>
+  </data>
+  <data name="DialogDeleteMessage" xml:space="preserve">
+    <value>确定要删除隧道 '{0}' 吗？</value>
+  </data>
+  <data name="DialogNameTitle" xml:space="preserve">
+    <value>STM: 命名新隧道</value>
+  </data>
+  <data name="DialogNamePrompt" xml:space="preserve">
+    <value>新隧道名称：</value>
+  </data>
+  <data name="DialogErrorEmptyName" xml:space="preserve">
+    <value>隧道名称不能为空。
+请输入有效的名称。</value>
+  </data>
+  <data name="DialogErrorDuplicateName" xml:space="preserve">
+    <value>已存在同名的隧道。
+请选择不同的名称。</value>
+  </data>
+  <data name="DialogQuitTitle" xml:space="preserve">
+    <value>真的要退出吗？</value>
+  </data>
+  <data name="DialogQuitMessage" xml:space="preserve">
+    <value>目前有 {0} 个活动中的隧道。
+如果退出，所有隧道都会被关闭。</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>取消(C)</value>
+  </data>
+  <data name="BtnOK" xml:space="preserve">
+    <value>确定(O)</value>
+  </data>
+
+  <!-- About Dialog -->
+  <data name="AboutTitle" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Gnome SSH Tunnel Manager - SSH 隧道管理前端。</value>
+  </data>
+  <data name="AboutLicense" xml:space="preserve">
+    <value>这个程序没有任何保证与责任。
+需要更多标准，请参阅 GNU 通用公众授权 2 或稍后更新版本。</value>
+  </data>
+  <data name="AboutCredits" xml:space="preserve">
+    <value>鸣谢(R)</value>
+  </data>
+  <data name="AboutClose" xml:space="preserve">
+    <value>关闭(C)</value>
+  </data>
+  <data name="AboutCreditsTitle" xml:space="preserve">
+    <value>制作者</value>
+  </data>
+  <data name="About_DotNetPort" xml:space="preserve">
+    <value>dot-gSTM (.NET移植版)</value>
+  </data>
+  <data name="About_DotNetImpl" xml:space="preserve">
+    <value>参考gSTM Gtk3 Edition重构 (.NET 10 + AvaloniaUI实现)</value>
+  </data>
+  <data name="About_DotNetImplPrefix" xml:space="preserve">
+    <value>参考</value>
+  </data>
+  <data name="About_DotNetImplLink" xml:space="preserve">
+    <value>gSTM Gtk3 Edition</value>
+  </data>
+  <data name="About_DotNetImplSuffix" xml:space="preserve">
+    <value>重构 (.NET 10 + AvaloniaUI实现)</value>
+  </data>
+  <data name="About_DotNetAuthor" xml:space="preserve">
+    <value>作者: Cody &amp; Claude-Code</value>
+  </data>
+  <data name="AboutWebsite" xml:space="preserve">
+    <value>网站</value>
+  </data>
+
+  <!-- 应用程序 -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>Gnome SSH Tunnel Manager</value>
+  </data>
+  <data name="StatusReady" xml:space="preserve">
+    <value>Ready for action.</value>
+  </data>
+
+  <!-- 菜单 -->
+  <data name="MenuHelp" xml:space="preserve">
+    <value>说明(H)</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>关于(A)</value>
+  </data>
+
+  <!-- 错误 -->
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>错误</value>
+  </data>
+
+  <!-- SSH 隧道错误消息 (corresponds to fnssht.c:101-132) -->
+  <data name="TunnelStopped" xml:space="preserve">
+    <value>隧道 '{0}' 已停止。</value>
+  </data>
+  <data name="TunnelTerminated" xml:space="preserve">
+    <value>隧道 '{0}' 已终止</value>
+  </data>
+  <data name="TunnelProcessKilled" xml:space="preserve">
+    <value>ssh 进程已被终止！</value>
+  </data>
+  <data name="TunnelUnknownError" xml:space="preserve">
+    <value>未知错误代码：{0}</value>
+  </data>
+  <data name="TunnelRestarting" xml:space="preserve">
+    <value>正在重连。({0} / {1})</value>
+  </data>
+
+  <!-- NameDialog -->
+  <data name="DialogNameWatermark" xml:space="preserve">
+    <value>输入隧道名称...</value>
+  </data>
+
+  <!-- PropertiesDialog -->
+  <data name="PropertiesTitle" xml:space="preserve">
+    <value>gSTM: 设置隧道设置</value>
+  </data>
+  <data name="PropertiesName" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="PropertiesPreset" xml:space="preserve">
+    <value>预设:</value>
+  </data>
+  <data name="PropertiesPresetHint" xml:space="preserve">
+    <value>预设值从 ~/.ssh/config 读取。</value>
+  </data>
+  <data name="PropertiesUser" xml:space="preserve">
+    <value>用户:</value>
+  </data>
+  <data name="PropertiesHost" xml:space="preserve">
+    <value>主机:</value>
+  </data>
+  <data name="PropertiesPort" xml:space="preserve">
+    <value>端口:</value>
+  </data>
+  <data name="PropertiesPrivkey" xml:space="preserve">
+    <value>私钥:</value>
+  </data>
+  <data name="PropertiesLocateKey" xml:space="preserve">
+    <value>⚲ 查找私钥...</value>
+  </data>
+  <data name="PropertiesAutoStart" xml:space="preserve">
+    <value>启动时自动启动</value>
+  </data>
+  <data name="PropertiesAutoRestart" xml:space="preserve">
+    <value>失败时自动重启</value>
+  </data>
+  <data name="PropertiesNotify" xml:space="preserve">
+    <value>重启时通知</value>
+  </data>
+  <data name="PropertiesMaxRestarts" xml:space="preserve">
+    <value>最大重启次数:</value>
+  </data>
+  <data name="PropertiesBtnAdd" xml:space="preserve">
+    <value>添加(A)</value>
+  </data>
+  <data name="PropertiesBtnEdit" xml:space="preserve">
+    <value>编辑(E)</value>
+  </data>
+  <data name="PropertiesBtnDelete" xml:space="preserve">
+    <value>删除(D)</value>
+  </data>
+  <data name="PropertiesColType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="PropertiesColPort" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="PropertiesColToHost" xml:space="preserve">
+    <value>目标主机</value>
+  </data>
+  <data name="PropertiesColToPort" xml:space="preserve">
+    <value>目标端口</value>
+  </data>
+  <data name="PropertiesHelpText" xml:space="preserve">
+    <value>私钥是可选的；仅用于公钥认证。
+
+注意：对于公钥认证，服务器密钥必须在
+~/.ssh/authorizedkeys 中。
+从终端使用 ssh 连接来完成此操作。
+
+此窗口中的所有选项都有工具提示。将鼠标停留在选项上以查看更多信息。</value>
+  </data>
+
+  <!-- TrayService -->
+  <data name="TrayShowGstm" xml:space="preserve">
+    <value>显示 gSTM(S)</value>
+  </data>
+  <data name="TrayHideGstm" xml:space="preserve">
+    <value>隐藏 gSTM(H)</value>
+  </data>
+  <data name="TrayConnect" xml:space="preserve">
+    <value>连接: </value>
+  </data>
+  <data name="TrayDisconnect" xml:space="preserve">
+    <value>断开连接: </value>
+  </data>
+  <data name="TrayAbout" xml:space="preserve">
+    <value>关于(A)</value>
+  </data>
+  <data name="TrayQuit" xml:space="preserve">
+    <value>退出(Q)</value>
+  </data>
+
+  <!-- TunnelDialog -->
+  <data name="TunnelTitle" xml:space="preserve">
+    <value>编辑重定向</value>
+  </data>
+  <data name="TunnelType" xml:space="preserve">
+    <value>类型:</value>
+  </data>
+  <data name="TunnelBindPort" xml:space="preserve">
+    <value>[绑定地址]:端口:</value>
+  </data>
+  <data name="TunnelToHost" xml:space="preserve">
+    <value>目标主机:</value>
+  </data>
+  <data name="TunnelToPort" xml:space="preserve">
+    <value>目标端口:</value>
+  </data>
+  <data name="TunnelErrorPortEmpty" xml:space="preserve">
+    <value>端口字段不能为空</value>
+  </data>
+  <data name="TunnelErrorHostEmpty" xml:space="preserve">
+    <value>主机字段不能为空</value>
+  </data>
+  <data name="TunnelErrorPort2Empty" xml:space="preserve">
+    <value>目标端口字段不能为空</value>
+  </data>
+  <data name="Properties_SelectPrivateKey" xml:space="preserve">
+    <value>选择私钥</value>
+  </data>
+</root>

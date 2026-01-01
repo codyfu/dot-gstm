@@ -1,0 +1,14 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="DotGstm.Desktop.App"
+             RequestedThemeVariant="Light">
+             <!-- Force Light theme for consistent appearance across all platforms (matches original gSTM) -->
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+
+        <!-- GTK2 Classic Button Style -->
+        <StyleInclude Source="/Styles/Gtk2ButtonStyle.axaml"/>
+    </Application.Styles>
+</Application>

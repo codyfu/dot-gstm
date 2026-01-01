@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- MainWindow ボタン -->
+  <data name="Btn_Start" xml:space="preserve">
+    <value>開始(S)</value>
+  </data>
+  <data name="Btn_Stop" xml:space="preserve">
+    <value>停止(T)</value>
+  </data>
+  <data name="Btn_Restart" xml:space="preserve">
+    <value>再起動(R)</value>
+  </data>
+  <data name="Btn_Add" xml:space="preserve">
+    <value>追加(A)</value>
+  </data>
+  <data name="Btn_Delete" xml:space="preserve">
+    <value>削除(D)</value>
+  </data>
+  <data name="Btn_Properties" xml:space="preserve">
+    <value>プロパティ(P)</value>
+  </data>
+  <data name="Btn_Copy" xml:space="preserve">
+    <value>コピー(C)</value>
+  </data>
+  <data name="Btn_Close" xml:space="preserve">
+    <value>終了(Q)</value>
+  </data>
+
+  <!-- MainWindow 列ヘッダー -->
+  <data name="Column_Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="Column_Active" xml:space="preserve">
+    <value>状態</value>
+  </data>
+
+  <!-- 状態テキスト -->
+  <data name="Status_Active" xml:space="preserve">
+    <value>実行中</value>
+  </data>
+  <data name="Status_Inactive" xml:space="preserve">
+    <value>停止中</value>
+  </data>
+
+  <!-- ダイアログ -->
+  <data name="Dialog_DeleteTitle" xml:space="preserve">
+    <value>トンネルを削除しますか？</value>
+  </data>
+  <data name="Dialog_DeleteMessage" xml:space="preserve">
+    <value>トンネル '{0}' を削除してもよろしいですか？</value>
+  </data>
+  <data name="Dialog_NameTitle" xml:space="preserve">
+    <value>STM: 新しいトンネルの名前</value>
+  </data>
+  <data name="Dialog_NamePrompt" xml:space="preserve">
+    <value>新しいトンネルの名前：</value>
+  </data>
+  <data name="Dialog_ErrorEmptyName" xml:space="preserve">
+    <value>トンネル名は空にできません。
+有効な名前を入力してください。</value>
+  </data>
+  <data name="Dialog_ErrorDuplicateName" xml:space="preserve">
+    <value>その名前のトンネルは既に存在します。
+別の名前を選択してください。</value>
+  </data>
+  <data name="Dialog_QuitTitle" xml:space="preserve">
+    <value>本当に終了しますか？</value>
+  </data>
+  <data name="Dialog_QuitMessage" xml:space="preserve">
+    <value>アクティブなトンネルが {0} 個あります。
+終了すると、すべてのトンネルが閉じられます。</value>
+  </data>
+  <data name="Btn_Cancel" xml:space="preserve">
+    <value>キャンセル(C)</value>
+  </data>
+  <data name="Btn_OK" xml:space="preserve">
+    <value>OK(O)</value>
+  </data>
+
+  <!-- About Dialog -->
+  <data name="About_Title" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="About_Description" xml:space="preserve">
+    <value>Gnome SSH Tunnel Manager - SSH トンネリングのフロントエンド。</value>
+  </data>
+  <data name="About_License" xml:space="preserve">
+    <value>このプログラムは無保証です。
+詳細については、GNU General Public License version 2 以降を参照してください。</value>
+  </data>
+  <data name="About_Credits" xml:space="preserve">
+    <value>クレジット(R)</value>
+  </data>
+  <data name="About_Close" xml:space="preserve">
+    <value>閉じる(C)</value>
+  </data>
+  <data name="About_CreditsTitle" xml:space="preserve">
+    <value>製作者</value>
+  </data>
+  <data name="About_DotNetPort" xml:space="preserve">
+    <value>dot-gSTM (.NET移植版)</value>
+  </data>
+  <data name="About_DotNetImpl" xml:space="preserve">
+    <value>gSTM Gtk3 Editionから再構築 (.NET 10 + AvaloniaUI実装)</value>
+  </data>
+  <data name="About_DotNetImplPrefix" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="About_DotNetImplLink" xml:space="preserve">
+    <value>gSTM Gtk3 Edition</value>
+  </data>
+  <data name="About_DotNetImplSuffix" xml:space="preserve">
+    <value>から再構築 (.NET 10 + AvaloniaUI実装)</value>
+  </data>
+  <data name="About_DotNetAuthor" xml:space="preserve">
+    <value>作者: Cody &amp; Claude-Code</value>
+  </data>
+  <data name="About_Website" xml:space="preserve">
+    <value>ウェブサイト</value>
+  </data>
+
+  <!-- アプリケーション -->
+  <data name="App_Title" xml:space="preserve">
+    <value>Gnome SSH Tunnel Manager</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Ready for action.</value>
+  </data>
+
+  <!-- メニュー -->
+  <data name="Menu_Help" xml:space="preserve">
+    <value>ヘルプ(H)</value>
+  </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>について(A)</value>
+  </data>
+
+  <!-- エラー -->
+  <data name="Error_Title" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+
+  <!-- SSH トンネルエラーメッセージ (corresponds to fnssht.c:101-132) -->
+  <data name="Tunnel_Stopped" xml:space="preserve">
+    <value>トンネル '{0}' が停止しました。</value>
+  </data>
+  <data name="Tunnel_Terminated" xml:space="preserve">
+    <value>トンネル '{0}' が終了しました</value>
+  </data>
+  <data name="Tunnel_ProcessKilled" xml:space="preserve">
+    <value>ssh プロセスが強制終了されました！</value>
+  </data>
+  <data name="Tunnel_UnknownError" xml:space="preserve">
+    <value>不明なエラーコード：{0}</value>
+  </data>
+  <data name="Tunnel_Restarting" xml:space="preserve">
+    <value>再接続中。({0} / {1})</value>
+  </data>
+
+  <!-- NameDialog -->
+  <data name="Dialog_NameWatermark" xml:space="preserve">
+    <value>トンネル名を入力...</value>
+  </data>
+
+  <!-- PropertiesDialog -->
+  <data name="Properties_Title" xml:space="preserve">
+    <value>gSTM: トンネル設定の構成</value>
+  </data>
+  <data name="Properties_Name" xml:space="preserve">
+    <value>名前:</value>
+  </data>
+  <data name="Properties_Preset" xml:space="preserve">
+    <value>プリセット:</value>
+  </data>
+  <data name="Properties_PresetHint" xml:space="preserve">
+    <value>プリセットは ~/.ssh/config から読み込まれます。</value>
+  </data>
+  <data name="Properties_User" xml:space="preserve">
+    <value>ユーザー:</value>
+  </data>
+  <data name="Properties_Host" xml:space="preserve">
+    <value>ホスト:</value>
+  </data>
+  <data name="Properties_Port" xml:space="preserve">
+    <value>ポート:</value>
+  </data>
+  <data name="Properties_Privkey" xml:space="preserve">
+    <value>秘密鍵:</value>
+  </data>
+  <data name="Properties_LocateKey" xml:space="preserve">
+    <value>⚲ 秘密鍵を検索...</value>
+  </data>
+  <data name="Properties_AutoStart" xml:space="preserve">
+    <value>起動時に自動開始</value>
+  </data>
+  <data name="Properties_AutoRestart" xml:space="preserve">
+    <value>失敗時に自動再起動</value>
+  </data>
+  <data name="Properties_Notify" xml:space="preserve">
+    <value>再起動時に通知</value>
+  </data>
+  <data name="Properties_MaxRestarts" xml:space="preserve">
+    <value>最大再起動回数:</value>
+  </data>
+  <data name="Properties_BtnAdd" xml:space="preserve">
+    <value>追加(A)</value>
+  </data>
+  <data name="Properties_BtnEdit" xml:space="preserve">
+    <value>編集(E)</value>
+  </data>
+  <data name="Properties_BtnDelete" xml:space="preserve">
+    <value>削除(D)</value>
+  </data>
+  <data name="Properties_ColType" xml:space="preserve">
+    <value>タイプ</value>
+  </data>
+  <data name="Properties_ColPort" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+  <data name="Properties_ColToHost" xml:space="preserve">
+    <value>宛先ホスト</value>
+  </data>
+  <data name="Properties_ColToPort" xml:space="preserve">
+    <value>宛先ポート</value>
+  </data>
+  <data name="Properties_HelpText" xml:space="preserve">
+    <value>秘密鍵はオプションです。公開鍵認証にのみ使用されます。
+
+注意：公開鍵認証の場合、サーバー鍵は
+~/.ssh/authorized_keys に存在する必要があります。
+これを実現するには、ターミナルから ssh を使用して接続してください。
+
+このウィンドウのすべてのオプションにはツールチップが用意されています。オプションの上にマウスを置くと、詳細情報が表示されます。</value>
+  </data>
+
+  <!-- TrayService -->
+  <data name="Tray_ShowGstm" xml:space="preserve">
+    <value>gSTM を表示(S)</value>
+  </data>
+  <data name="Tray_HideGstm" xml:space="preserve">
+    <value>gSTM を非表示(H)</value>
+  </data>
+  <data name="Tray_Connect" xml:space="preserve">
+    <value>接続: </value>
+  </data>
+  <data name="Tray_Disconnect" xml:space="preserve">
+    <value>切断: </value>
+  </data>
+  <data name="Tray_About" xml:space="preserve">
+    <value>について(A)</value>
+  </data>
+  <data name="Tray_Quit" xml:space="preserve">
+    <value>終了(Q)</value>
+  </data>
+
+  <!-- TunnelDialog -->
+  <data name="Tunnel_Title" xml:space="preserve">
+    <value>リダイレクトを編集</value>
+  </data>
+  <data name="Tunnel_Type" xml:space="preserve">
+    <value>タイプ:</value>
+  </data>
+  <data name="Tunnel_BindPort" xml:space="preserve">
+    <value>[バインドアドレス]:ポート:</value>
+  </data>
+  <data name="Tunnel_ToHost" xml:space="preserve">
+    <value>宛先ホスト:</value>
+  </data>
+  <data name="Tunnel_ToPort" xml:space="preserve">
+    <value>宛先ポート:</value>
+  </data>
+  <data name="Tunnel_ErrorPortEmpty" xml:space="preserve">
+    <value>ポートフィールドが空です</value>
+  </data>
+  <data name="Tunnel_ErrorHostEmpty" xml:space="preserve">
+    <value>ホストフィールドが空です</value>
+  </data>
+  <data name="Tunnel_ErrorPort2Empty" xml:space="preserve">
+    <value>宛先ポートフィールドが空です</value>
+  </data>
+  <data name="Properties_SelectPrivateKey" xml:space="preserve">
+    <value>秘密鍵を選択</value>
+  </data>
+</root>

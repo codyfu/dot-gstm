@@ -1,0 +1,68 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DotGstm.Desktop.Views.NameDialog"
+        Title="STM: Name the new tunnel"
+        Width="350" Height="150"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        Icon="/Assets/Images/gSTM.png">
+
+  <Grid Margin="15">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <!-- 圖示和標籤 -->
+    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+      <Path Data="M12,2 L12,14 M6,8 L18,8"
+            Stroke="Blue"
+            StrokeThickness="3"
+            Width="32" Height="32"
+            Stretch="Uniform"
+            Margin="0,0,15,0" />
+      <TextBlock Text="Name for new tunnel:"
+                 VerticalAlignment="Center"
+                 FontWeight="Bold" />
+    </StackPanel>
+
+    <!-- 名稱輸入框 -->
+    <TextBox x:Name="NameTextBox"
+             Grid.Row="1"
+             Watermark="Enter tunnel name..."
+             VerticalAlignment="Top" />
+
+    <!-- 按鈕列 -->
+    <StackPanel Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Spacing="10"
+                Margin="0,15,0,0">
+      <!-- 取消按鈕 (參照 GTK3 gtk-cancel) -->
+      <Button x:Name="BtnCancel"
+              Width="100"
+              HotKey="Alt+C"
+              Click="BtnCancel_Click">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+          <TextBlock Text="●" Foreground="Red" FontSize="14" Margin="0,0,5,0" />
+          <TextBlock x:Name="TxtCancelLabel" Text="取消(C)" />
+        </StackPanel>
+      </Button>
+
+      <!-- 確定按鈕 (參照 GTK3 gtk-ok) -->
+      <Button x:Name="BtnOK"
+              Width="100"
+              IsDefault="True"
+              HotKey="Alt+O"
+              Click="BtnOK_Click">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+          <TextBlock Text="✓" Foreground="Blue" FontSize="14" Margin="0,0,5,0" />
+          <TextBlock x:Name="TxtOkLabel" Text="確定(O)" />
+        </StackPanel>
+      </Button>
+    </StackPanel>
+
+  </Grid>
+
+</Window>

@@ -1,0 +1,250 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DotGstm.Desktop.ViewModels"
+        x:Class="DotGstm.Desktop.Views.PropertiesDialog"
+        x:DataType="vm:PropertiesDialogViewModel"
+        Title="gSTM: Configure tunnel settings"
+        Width="729" Height="738"
+        MinWidth="729" MinHeight="738"
+        MaxWidth="729" MaxHeight="738"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        Background="#EDEDED"
+        Icon="/Assets/Images/gSTM.png">
+
+  <Window.Styles>
+    <!-- 移除 DataGrid Cell 焦點黑框 -->
+    <Style Selector="DataGridCell:focus /template/ Grid#FocusVisual">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <!-- 縮小 DataGrid Header 的 Padding，並加入格線 -->
+    <Style Selector="DataGridColumnHeader">
+      <Setter Property="Padding" Value="3,2" />
+      <Setter Property="BorderBrush" Value="#C0C0C0" />
+      <Setter Property="BorderThickness" Value="0,0,1,1" />
+    </Style>
+  </Window.Styles>
+
+  <DockPanel Margin="10">
+
+    <!-- 底部按鈕 -->
+    <StackPanel DockPanel.Dock="Bottom"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Margin="0,10,0,0"
+                Spacing="8">
+      <Button x:Name="BtnCancel" Width="100" Height="32" HotKey="Alt+C" Click="BtnCancel_Click">
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBlock Text="●" Foreground="Red" FontSize="14" VerticalAlignment="Center" />
+          <TextBlock Text="取消(C)" VerticalAlignment="Center" />
+        </StackPanel>
+      </Button>
+      <Button x:Name="BtnOk" Width="100" Height="32" IsDefault="True" HotKey="Alt+O" Click="BtnOk_Click">
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBlock Text="✓" Foreground="Blue" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
+          <TextBlock Text="確定(O)" VerticalAlignment="Center" />
+        </StackPanel>
+      </Button>
+    </StackPanel>
+
+    <!-- 主要內容：上下分割 -->
+    <DockPanel>
+
+      <!-- 上半部：所有連接設定 (左中右三欄) -->
+      <Grid DockPanel.Dock="Top" ColumnDefinitions="1*,1*,1*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="8">
+
+        <!-- 左欄 -->
+        <StackPanel Grid.Column="0" Grid.Row="0" Spacing="8">
+
+          <!-- Name -->
+          <Grid ColumnDefinitions="55,*">
+            <TextBlock Grid.Column="0" Text="Name:" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" x:Name="TxtName" Text="{Binding Name}" />
+          </Grid>
+
+          <!-- Preset -->
+          <Grid ColumnDefinitions="55,*">
+            <TextBlock Grid.Column="0" Text="Preset:" VerticalAlignment="Center" />
+            <ComboBox Grid.Column="1"
+                      x:Name="CmbPreset"
+                      ItemsSource="{Binding Presets}"
+                      SelectedIndex="{Binding SelectedPresetIndex}" />
+          </Grid>
+
+          <!-- Presets 說明 -->
+          <TextBlock Text="Presets are read from ~/.ssh/config."
+                     FontSize="10"
+                     Foreground="#666666"
+                     Margin="0,0,0,0" />
+
+        </StackPanel>
+
+        <!-- 中欄 -->
+        <StackPanel Grid.Column="1" Grid.Row="0" Spacing="8">
+
+          <!-- User -->
+          <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Grid.Column="0" Text="User:" Width="50" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1"
+                     x:Name="TxtUser"
+                     Text="{Binding User}"
+                     IsEnabled="{Binding IsConnectionFieldsEnabled}" />
+          </Grid>
+
+          <!-- Host -->
+          <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Grid.Column="0" Text="Host:" Width="50" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1"
+                     x:Name="TxtHost"
+                     Text="{Binding Host}"
+                     IsEnabled="{Binding IsConnectionFieldsEnabled}" />
+          </Grid>
+
+          <!-- Port -->
+          <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Grid.Column="0" Text="Port:" Width="50" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1"
+                     x:Name="TxtPort"
+                     Text="{Binding Port}"
+                     IsEnabled="{Binding IsConnectionFieldsEnabled}"
+                     Width="80"
+                     HorizontalAlignment="Left" />
+          </Grid>
+
+          <!-- Locate Private Key 按鈕 -->
+          <Button x:Name="BtnLocateKey"
+                  Content="⚲ Locate Private Key..."
+                  Click="BtnBrowse_Click"
+                  HorizontalAlignment="Stretch"
+                  Height="28"
+                  Margin="0,4,0,0" />
+
+        </StackPanel>
+
+        <!-- 右欄 -->
+        <StackPanel Grid.Column="2" Grid.Row="0" Spacing="6">
+
+          <!-- Checkboxes -->
+          <CheckBox x:Name="ChkAutoStart"
+                    Content="Auto-start on launch"
+                    IsChecked="{Binding AutoStart}"
+                    Margin="0,0,0,3" />
+          <CheckBox x:Name="ChkRestart"
+                    Content="Auto-restart on failure"
+                    IsChecked="{Binding AutoRestart}"
+                    Margin="0,0,0,3" />
+          <CheckBox x:Name="ChkNotify"
+                    Content="Notify when restarted"
+                    IsChecked="{Binding Notify}"
+                    Margin="0,0,0,3" />
+
+          <!-- Max restarts -->
+          <Grid ColumnDefinitions="Auto,Auto" Margin="0,3" ColumnSpacing="10">
+            <TextBlock Grid.Column="0"
+                       Text="Max restarts:"
+                       VerticalAlignment="Center" />
+            <TextBox Grid.Column="1"
+                     x:Name="TxtMaxRestarts"
+                     Text="{Binding MaxRestarts}"
+                     Width="50"
+                     HorizontalAlignment="Left" />
+          </Grid>
+
+        </StackPanel>
+
+        <!-- Privkey 橫跨中間和右邊兩欄 -->
+        <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" ColumnDefinitions="60,*">
+          <TextBlock Grid.Column="0" Text="Privkey:" VerticalAlignment="Center" />
+          <TextBox Grid.Column="1"
+                   x:Name="TxtPrivkey"
+                   Text="{Binding PrivateKey}"
+                   IsEnabled="{Binding IsConnectionFieldsEnabled}" />
+        </Grid>
+
+      </Grid>
+
+      <!-- 下半部：左右兩欄（DataGrid + 按鈕說明） -->
+      <Grid ColumnDefinitions="2*,1*" ColumnSpacing="10" Margin="0,10,0,0">
+
+        <!-- 左下：Port Redirections DataGrid -->
+        <Border Grid.Column="0"
+                BorderBrush="#C0C0C0"
+                BorderThickness="1"
+                Background="White">
+          <DataGrid x:Name="RedirList"
+                    ItemsSource="{Binding PortRedirections}"
+                    SelectedItem="{Binding SelectedRedirection}"
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    GridLinesVisibility="None"
+                    HeadersVisibility="Column"
+                    SelectionMode="Single"
+                    Background="White">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="70" />
+              <DataGridTextColumn Header="Port" Binding="{Binding Port}" Width="170" />
+              <DataGridTextColumn Header="To host" Binding="{Binding ToHost}" Width="150" />
+              <DataGridTextColumn Header="To port" Binding="{Binding ToPort}" Width="70" />
+            </DataGrid.Columns>
+          </DataGrid>
+        </Border>
+
+        <!-- 右下：按鈕和說明文字 -->
+        <StackPanel Grid.Column="1" Spacing="5">
+
+          <!-- 加入/編輯/刪除按鈕 (垂直排列) -->
+          <Button x:Name="BtnAdd"
+                  Height="28"
+                  HorizontalAlignment="Stretch"
+                  HotKey="Alt+A"
+                  Click="BtnAddRedir_Click">
+            <StackPanel Orientation="Horizontal" Spacing="5">
+              <TextBlock Text="+" Foreground="Blue" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" />
+              <TextBlock Text="加入(A)" VerticalAlignment="Center" />
+            </StackPanel>
+          </Button>
+          <Button x:Name="BtnEdit"
+                  Height="28"
+                  HorizontalAlignment="Stretch"
+                  HotKey="Alt+E"
+                  Click="BtnEditRedir_Click">
+            <StackPanel Orientation="Horizontal" Spacing="5">
+              <TextBlock Text="📝" FontSize="12" VerticalAlignment="Center" />
+              <TextBlock Text="編輯(E)" VerticalAlignment="Center" />
+            </StackPanel>
+          </Button>
+          <Button x:Name="BtnDelete"
+                  Height="28"
+                  HorizontalAlignment="Stretch"
+                  HotKey="Alt+D"
+                  Click="BtnDeleteRedir_Click">
+            <StackPanel Orientation="Horizontal" Spacing="5">
+              <TextBlock Text="×" Foreground="Red" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" />
+              <TextBlock Text="刪除(D)" VerticalAlignment="Center" />
+            </StackPanel>
+          </Button>
+
+          <!-- 說明文字 (無框無背景) -->
+          <TextBlock TextWrapping="Wrap" FontSize="10.5" Foreground="#555555" LineHeight="16" Margin="0,10,0,0">
+            <Run Text="Privkey is optional; Only used for public key authentication." />
+            <LineBreak />
+            <LineBreak />
+            <Run Text="Note: For public key authentication, server key must be in" />
+            <LineBreak />
+            <Run Text="~/.ssh/authorized_keys." />
+            <LineBreak />
+            <Run Text="Connect from a terminal using ssh to accomplish this." />
+            <LineBreak />
+            <LineBreak />
+            <Run Text="Tooltips are avaliable for everything in this window. Hold the mouse over an option to see more information on what it does." FontWeight="Bold" />
+          </TextBlock>
+
+        </StackPanel>
+
+      </Grid>
+
+    </DockPanel>
+
+  </DockPanel>
+
+</Window>

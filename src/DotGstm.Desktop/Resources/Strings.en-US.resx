@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- MainWindow Buttons -->
+  <data name="Btn_Start" xml:space="preserve">
+    <value>Start(S)</value>
+  </data>
+  <data name="Btn_Stop" xml:space="preserve">
+    <value>Stop(T)</value>
+  </data>
+  <data name="Btn_Restart" xml:space="preserve">
+    <value>Restart(R)</value>
+  </data>
+  <data name="Btn_Add" xml:space="preserve">
+    <value>Add(A)</value>
+  </data>
+  <data name="Btn_Delete" xml:space="preserve">
+    <value>Delete(D)</value>
+  </data>
+  <data name="Btn_Properties" xml:space="preserve">
+    <value>Properties(P)</value>
+  </data>
+  <data name="Btn_Copy" xml:space="preserve">
+    <value>Copy(C)</value>
+  </data>
+  <data name="Btn_Close" xml:space="preserve">
+    <value>Quit(Q)</value>
+  </data>
+
+  <!-- MainWindow Column Headers -->
+  <data name="Column_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Column_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+
+  <!-- Status Text -->
+  <data name="Status_Active" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="Status_Inactive" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+
+  <!-- Dialogs -->
+  <data name="Dialog_DeleteTitle" xml:space="preserve">
+    <value>Delete tunnel?</value>
+  </data>
+  <data name="Dialog_DeleteMessage" xml:space="preserve">
+    <value>Are you sure you want to delete the tunnel '{0}'?</value>
+  </data>
+  <data name="Dialog_NameTitle" xml:space="preserve">
+    <value>STM: Name the new tunnel</value>
+  </data>
+  <data name="Dialog_NamePrompt" xml:space="preserve">
+    <value>Name for new tunnel:</value>
+  </data>
+  <data name="Dialog_ErrorEmptyName" xml:space="preserve">
+    <value>Tunnel name cannot be empty.
+Please enter a valid name.</value>
+  </data>
+  <data name="Dialog_ErrorDuplicateName" xml:space="preserve">
+    <value>A tunnel already exists with that name.
+Please choose a different name.</value>
+  </data>
+  <data name="Dialog_QuitTitle" xml:space="preserve">
+    <value>Really quit?</value>
+  </data>
+  <data name="Dialog_QuitMessage" xml:space="preserve">
+    <value>There are {0} active tunnels.
+If you quit, all tunnels will be closed.</value>
+  </data>
+  <data name="Btn_Cancel" xml:space="preserve">
+    <value>Cancel(C)</value>
+  </data>
+  <data name="Btn_OK" xml:space="preserve">
+    <value>OK(O)</value>
+  </data>
+
+  <!-- About Dialog -->
+  <data name="About_Title" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About_Description" xml:space="preserve">
+    <value>Gnome SSH Tunnel Manager - a front-end to ssh tunneling.</value>
+  </data>
+  <data name="About_License" xml:space="preserve">
+    <value>This program comes with ABSOLUTELY NO WARRANTY.
+For details, see the GNU General Public License version 2 or later.</value>
+  </data>
+  <data name="About_Credits" xml:space="preserve">
+    <value>Credits(R)</value>
+  </data>
+  <data name="About_Close" xml:space="preserve">
+    <value>Close(C)</value>
+  </data>
+  <data name="About_CreditsTitle" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="About_DotNetPort" xml:space="preserve">
+    <value>dot-gSTM (.NET Port)</value>
+  </data>
+  <data name="About_DotNetImpl" xml:space="preserve">
+    <value>Refactored from gSTM Gtk3 Edition (.NET 10 + AvaloniaUI)</value>
+  </data>
+  <data name="About_DotNetImplPrefix" xml:space="preserve">
+    <value>Refactored from </value>
+  </data>
+  <data name="About_DotNetImplLink" xml:space="preserve">
+    <value>gSTM Gtk3 Edition</value>
+  </data>
+  <data name="About_DotNetImplSuffix" xml:space="preserve">
+    <value> (.NET 10 + AvaloniaUI)</value>
+  </data>
+  <data name="About_DotNetAuthor" xml:space="preserve">
+    <value>Author: Cody &amp; Claude-Code</value>
+  </data>
+  <data name="About_Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+
+  <!-- Application -->
+  <data name="App_Title" xml:space="preserve">
+    <value>Gnome SSH Tunnel Manager</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Ready for action.</value>
+  </data>
+
+  <!-- Menu -->
+  <data name="Menu_Help" xml:space="preserve">
+    <value>Help(H)</value>
+  </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>About(A)</value>
+  </data>
+
+  <!-- Error -->
+  <data name="Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+
+  <!-- SSH Tunnel Error Messages (corresponds to fnssht.c:101-132) -->
+  <data name="Tunnel_Stopped" xml:space="preserve">
+    <value>Tunnel '{0}' stopped.</value>
+  </data>
+  <data name="Tunnel_Terminated" xml:space="preserve">
+    <value>Tunnel '{0}' terminated</value>
+  </data>
+  <data name="Tunnel_ProcessKilled" xml:space="preserve">
+    <value>ssh process killed!</value>
+  </data>
+  <data name="Tunnel_UnknownError" xml:space="preserve">
+    <value>Unknown error code: {0}</value>
+  </data>
+  <data name="Tunnel_Restarting" xml:space="preserve">
+    <value>Restarting. ({0} of {1})</value>
+  </data>
+
+  <!-- NameDialog -->
+  <data name="Dialog_NameWatermark" xml:space="preserve">
+    <value>Enter tunnel name...</value>
+  </data>
+
+  <!-- PropertiesDialog -->
+  <data name="Properties_Title" xml:space="preserve">
+    <value>gSTM: Configure tunnel settings</value>
+  </data>
+  <data name="Properties_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="Properties_Preset" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
+  <data name="Properties_PresetHint" xml:space="preserve">
+    <value>Presets are read from ~/.ssh/config.</value>
+  </data>
+  <data name="Properties_User" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="Properties_Host" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="Properties_Port" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="Properties_Privkey" xml:space="preserve">
+    <value>Privkey:</value>
+  </data>
+  <data name="Properties_LocateKey" xml:space="preserve">
+    <value>⚲ Locate Private Key...</value>
+  </data>
+  <data name="Properties_AutoStart" xml:space="preserve">
+    <value>Auto-start on launch</value>
+  </data>
+  <data name="Properties_AutoRestart" xml:space="preserve">
+    <value>Auto-restart on failure</value>
+  </data>
+  <data name="Properties_Notify" xml:space="preserve">
+    <value>Notify when restarted</value>
+  </data>
+  <data name="Properties_MaxRestarts" xml:space="preserve">
+    <value>Max restarts:</value>
+  </data>
+  <data name="Properties_BtnAdd" xml:space="preserve">
+    <value>Add(A)</value>
+  </data>
+  <data name="Properties_BtnEdit" xml:space="preserve">
+    <value>Edit(E)</value>
+  </data>
+  <data name="Properties_BtnDelete" xml:space="preserve">
+    <value>Delete(D)</value>
+  </data>
+  <data name="Properties_ColType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Properties_ColPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Properties_ColToHost" xml:space="preserve">
+    <value>To host</value>
+  </data>
+  <data name="Properties_ColToPort" xml:space="preserve">
+    <value>To port</value>
+  </data>
+  <data name="Properties_HelpText" xml:space="preserve">
+    <value>Privkey is optional; Only used for public key authentication.
+
+Note: For public key authentication, server key must be in
+~/.ssh/authorized_keys.
+Connect from a terminal using ssh to accomplish this.
+
+Tooltips are avaliable for everything in this window. Hold the mouse over an option to see more information on what it does.</value>
+  </data>
+
+  <!-- TrayService -->
+  <data name="Tray_ShowGstm" xml:space="preserve">
+    <value>Show gSTM(S)</value>
+  </data>
+  <data name="Tray_HideGstm" xml:space="preserve">
+    <value>Hide gSTM(H)</value>
+  </data>
+  <data name="Tray_Connect" xml:space="preserve">
+    <value>Connect: </value>
+  </data>
+  <data name="Tray_Disconnect" xml:space="preserve">
+    <value>Disconnect: </value>
+  </data>
+  <data name="Tray_About" xml:space="preserve">
+    <value>About(A)</value>
+  </data>
+  <data name="Tray_Quit" xml:space="preserve">
+    <value>Quit(Q)</value>
+  </data>
+
+  <!-- TunnelDialog -->
+  <data name="Tunnel_Title" xml:space="preserve">
+    <value>Edit redirection</value>
+  </data>
+  <data name="Tunnel_Type" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="Tunnel_BindPort" xml:space="preserve">
+    <value>[bind_address]:Port:</value>
+  </data>
+  <data name="Tunnel_ToHost" xml:space="preserve">
+    <value>To Host:</value>
+  </data>
+  <data name="Tunnel_ToPort" xml:space="preserve">
+    <value>To Port:</value>
+  </data>
+  <data name="Tunnel_ErrorPortEmpty" xml:space="preserve">
+    <value>Port entry is empty</value>
+  </data>
+  <data name="Tunnel_ErrorHostEmpty" xml:space="preserve">
+    <value>Host entry is empty</value>
+  </data>
+  <data name="Tunnel_ErrorPort2Empty" xml:space="preserve">
+    <value>Port2 entry is empty</value>
+  </data>
+  <data name="Properties_SelectPrivateKey" xml:space="preserve">
+    <value>Select Private Key</value>
+  </data>
+</root>
