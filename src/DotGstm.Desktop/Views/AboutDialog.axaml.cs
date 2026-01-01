@@ -145,7 +145,7 @@ public partial class AboutDialog : Window
         try
         {
             // 開啟專案網站
-            var url = "https://gitlab.mypc.tw/ai-gemini-claude/dot-gstm";
+            var url = "https://github.com/codyfu/dot-gstm";
             var psi = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = url,

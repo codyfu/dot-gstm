@@ -535,7 +535,7 @@ dotnet publish -c Release -r osx-arm64 --self-contained
 
 dot-gSTM faithfully replicates gSTM's architecture while adapting to .NET patterns.
 
-For detailed code comparison and mapping, see [gSTM-1.3.7-vs-dot-gSTM-1.4.0-Complete-Comparison-2026-01-01.md](docs/gSTM-1.3.7-vs-dot-gSTM-1.4.0-Complete-Comparison-2026-01-01.md)
+For detailed code comparison and mapping, see [gSTM-1.3.7-vs-dot-gSTM-1.4.0-Complete-Comparison-2026-01-01.md](gSTM-1.3.7-vs-dot-gSTM-1.4.0-Complete-Comparison-2026-01-01.md)
 
 Quick reference table:
 
@@ -574,7 +574,7 @@ Quick reference table:
 
 dot-gSTM 忠實複製 gSTM 的架構，同時適應 .NET 模式。
 
-詳細程式碼對照與對應請參閱 [gSTM-1.3.7-vs-dot-gSTM-1.4.0-完整對照-2026-01-01.md](docs/gSTM-1.3.7-vs-dot-gSTM-1.4.0-完整對照-2026-01-01.md)
+詳細程式碼對照與對應請參閱 [gSTM-1.3.7-vs-dot-gSTM-1.4.0-完整對照-2026-01-01.md](gSTM-1.3.7-vs-dot-gSTM-1.4.0-完整對照-2026-01-01.md)
 
 快速參考表：
 
